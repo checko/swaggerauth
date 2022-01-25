@@ -10,5 +10,7 @@ from .. import schemas
 class Secret(Resource):
 
     def get(self):
+        print("secret get")
+        user_id = "123"
 
-        return None, 200, None
+        return user_id, 200, None

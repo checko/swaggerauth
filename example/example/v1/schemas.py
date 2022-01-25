@@ -228,4 +228,4 @@ def normalize(schema, data, required_defaults=None, resolver=None):
 
         return funcs[type_](schema, data)
 
-    return _normalize(schema, data), errors
+    return data, errors
