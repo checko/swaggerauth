@@ -9,10 +9,10 @@
 from __future__ import absolute_import
 
 from .api.auth_user_id import AuthUserId
-from .api.secret import Secret
+from .api.protect import Protect
 
 
 routes = [
     dict(resource=AuthUserId, urls=['/auth/<user_id>'], endpoint='auth_user_id'),
-    dict(resource=Secret, urls=['/secret'], endpoint='secret'),
+    dict(resource=Protect, urls=['/protect'], endpoint='protect'),
 ]

@@ -6,7 +6,6 @@ paths:
   /auth/{user_id}:
     get:
       summary: Return JWT token
-      operationId: app.generate_token
       parameters:
       - name: user_id
         description: User unique identifier
@@ -22,10 +21,9 @@ paths:
             'text/plain':
               schema:
                 type: string
-  /secret:
+  /protect:
     get:
       summary: Return secret string
-      operationId: app.get_secret
       responses:
         '200':
           description: secret response
@@ -42,4 +40,3 @@ components:
       type: http
       scheme: bearer
       bearerFormat: JWT
-      x-bearerInfoFunc: app.decode_token

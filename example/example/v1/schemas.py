@@ -57,11 +57,11 @@ validators = {
 
 filters = {
     ('auth_user_id', 'GET'): {200: {'headers': None, 'schema': None}},
-    ('secret', 'GET'): {200: {'headers': None, 'schema': None}},
+    ('protect', 'GET'): {200: {'headers': None, 'schema': None}},
 }
 
 scopes = {
-    ('secret', 'GET'): ['secret'],
+    ('protect', 'GET'): ['secret'],
 }
 
 resolver = RefResolver.from_schema(definitions)
@@ -228,4 +228,4 @@ def normalize(schema, data, required_defaults=None, resolver=None):
 
         return funcs[type_](schema, data)
 
-    return data, errors
+    return _normalize(schema, data), errors

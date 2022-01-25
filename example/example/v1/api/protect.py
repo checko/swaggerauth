@@ -7,7 +7,7 @@ from . import Resource
 from .. import schemas
 
 
-class Secret(Resource):
+class Protect(Resource):
 
     def get(self):
 
