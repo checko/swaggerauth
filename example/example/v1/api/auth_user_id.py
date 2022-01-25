@@ -13,6 +13,6 @@ class AuthUserId(Resource):
 
     def get(self, user_id):
         print("auth get")
-        atoken = create_access_token(identity="test")
+        atoken = create_access_token(identity=str(user_id))
 
         return jsonify(access_token=atoken)
